@@ -1,0 +1,28 @@
+{
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"],
+    "strict": false,
+    // Path aliases
+    "baseUrl": "./src",
+    "paths": {
+      "~/utils/*": ["utils/*"],
+      "~/configs/*": ["configs/*"],
+      "~/controllers/*": ["controllers/*"],
+      "~/middlewares/*": ["middlewares/*"],
+      "~/models/*": ["models/*"],
+      "~/routes/*": ["routes/*"],
+      "~/services/*": ["services/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "public"],
+  "ts-node": {
+    // Do not forget to `npm i -D tsconfig-paths`
+    "require": ["tsconfig-paths/register"]
+  }
+}
